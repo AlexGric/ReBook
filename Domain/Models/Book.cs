@@ -14,7 +14,7 @@ namespace Domain.Models
         public string Description { get; set; }
         public int Сhapters { get; set; }
         public ICollection<Genre> Genres { get; set; }
-        public ICollection<Tags> Tags { get; set; }
+        public ICollection<Tag> Tags { get; set; }
         public string Autor { get; set; }
         public ICollection<Bitmap> Images { get; set; }
         public int Cost { get; set; }
