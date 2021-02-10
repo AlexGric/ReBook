@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Repository.Interfaces
 {
-    public interface ITagRepository
+    public interface ITagRepository : IRepository<Tag>
     {
         Task<Tag> GetByIdAsync(int id);
     }

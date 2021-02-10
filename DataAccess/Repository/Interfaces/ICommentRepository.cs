@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Repository.Interfaces
 {
-    public interface ICommentRepository
+    public interface ICommentRepository : IRepository<Comment>
     {
         Task<Comment> GetByIdAsync(int id);
     }

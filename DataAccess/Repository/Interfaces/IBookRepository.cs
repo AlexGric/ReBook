@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Repository.Interfaces
 {
-    public interface IBookRepository
+    public interface IBookRepository : IRepository<Book>
     {
         Task<IReadOnlyCollection<Book>> FindAllBooksAllIncludedAsync();
         Task<IReadOnlyCollection<Book>> FindBookByConditionAllIncludedAsync(Expression<Func<Book, bool>> bookPredicate);
