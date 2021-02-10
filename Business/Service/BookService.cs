@@ -3,7 +3,7 @@ using DataAccess.UnitOfWork;
 using Domain.Models;
 using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace Business.Service
@@ -23,14 +23,14 @@ namespace Business.Service
             return res;
         }
 
-        public async Task<IReadOnlyCollection<Address>> FindByConditionAsync(Expression<Func<Address, bool>> predicat)
+        public async Task<IReadOnlyCollection<Book>> FindByConditionAsync(Expression<Func<Book, bool>> predicat)
         {
-            return await _unitOfWork.AddressRepository.FindByConditionAsync(predicat);
+            return await unitOfWork.BookRepository.FindByConditionAsync(predicat);
         }
 
-        public async Task<IReadOnlyCollection<Address>> GetAllAsync()
+        public async Task<IReadOnlyCollection<Book>> GetAllAsync()
         {
-            return await _unitOfWork.AddressRepository.GetAllAsync();
+            return await unitOfWork.BookRepository.GetAllAsync();
         }
     }
 }
