@@ -6,8 +6,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
-using System.Collections.Generic;
-using System.Text;
+using Business.Service;
 using System.Threading.Tasks;
 
 namespace Business.Infrastructure
@@ -18,24 +17,13 @@ namespace Business.Infrastructure
         {
             services.AddScoped(typeof(IUnitOfWork), typeof(UnitOfWork));
             //services
-            services.AddTransient(typeof(AddressService));
-            services.AddTransient(typeof(BrandService));
-            services.AddTransient(typeof(CategoryService));
-            services.AddTransient(typeof(CharacteristicService));
-            services.AddTransient(typeof(IDeliveryService), typeof(DeliveryService));
-            services.AddTransient(typeof(ProductCharacteristicService));
-            services.AddTransient(typeof(ImageService));
             services.AddTransient(typeof(OrderService));
-            services.AddTransient(typeof(OrderDetailsService));
-            services.AddTransient(typeof(PackageService));
-            services.AddTransient(typeof(ProductService));
-            services.AddTransient(typeof(ImportExportService));
             services.AddTransient(typeof(CommentService));
             services.AddTransient(typeof(UserService));
-            services.AddTransient(typeof(LikeService));
-            services.AddTransient(typeof(NewsSenserService));
-            services.AddTransient(typeof(NewsSaveService));
-            services.AddTransient<ImageFileService>(service => new ImageFileService($"{ Directory.GetCurrentDirectory()}\\wwwroot\\Content\\Images\\"));
+            services.AddTransient(typeof(BookService));
+            services.AddTransient(typeof(GenreService));
+            services.AddTransient(typeof(OrderDetailService));
+            services.AddTransient(typeof(TagService));
 
 
 
